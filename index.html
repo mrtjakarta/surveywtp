@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <iframe width= "650" height="300" src="https://google-developers.appspot.com/maps/documentation/javascript/examples/full/places-autocomplete-addressform">
+    <iframe id="mapku" src="https://www.google.com/maps/embed/v1/place?q=Jakarta&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
     </iframe>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function(){
+        $("answer819371X2122X30613").change(function(){
+          var t = $("#answer819371X2122X30613 option:selected").text();
+          var url = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8";
+          t = t.trim();
+          t = t.replace(" ", "+");
+          url += "&q=" + t;
+          document.getElementById("mapku").src = url;
+          document.getElementById("mapku").reload(true);
+        });
+      });
+    </script>
   </body>
 </html>
